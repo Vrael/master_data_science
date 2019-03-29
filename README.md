@@ -1,0 +1,1 @@
+sudo docker-compose -f docker-compose.yml exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic EMTStopGeoBusData --from-beginning
