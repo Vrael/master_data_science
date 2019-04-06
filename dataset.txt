@@ -1,0 +1,6 @@
+# Tiempo medio de espera por parada en el intervalo de una hora
+# Nºparada hora tiempo_espera_real tiempo_espera_estimado coordenadas:x,y
+1887 09:00 2 5 -3.7130161106724,40.408697090458
+1887 10:00 3 2 -3.7130161106724,40.408697090458
+1887 11:00 3 4 -3.7130161106724,40.408697090458
+1888 09:00 2 5 -3.7130161106724,40.408697090458
