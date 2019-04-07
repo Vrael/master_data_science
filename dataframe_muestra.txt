@@ -1,0 +1,5 @@
+# Tiempos máximos de desviación de espera por parada
+# Nºparada tiempo_máximo_desviación_espera coordenadas:x,y
+1887 5 -3.7130161106724,40.408697090458
+1888 7 -4.7130161106724,41.408697090458
+1889 1 -4.2130161106724,41.408697090458
