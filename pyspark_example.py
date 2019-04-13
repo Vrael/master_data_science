@@ -6,7 +6,7 @@ from pyspark.mllib.clustering import KMeans, KMeansModel
 
 # Load and parse the data
 sc = SparkContext()
-data = sc.textFile("dataframe_muestra.txt")
+data = sc.textFile("dataframe.txt")
 parsedData = data.map(lambda line: array([float(x) for x in line.split(' ')]))
 
 # Build the model (cluster the data)
