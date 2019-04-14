@@ -39,8 +39,8 @@ def calculateMaxWaittingBusStops():
 	merged = df3.merge(df4, on='stop', how='inner')
 	print(merged)
 	
-	del df4['description']
-	df4.to_csv('.\dataframe.txt', sep='\t', index=False)
+	del merged['description']
+	merged.to_csv('.\dataframe.txt', sep='\t', index=False)
 
 def main():
 	calculateMaxWaittingBusStops()
