@@ -2,3 +2,6 @@ requests
 requests-toolbelt
 kafka-python
 pandas
+numpy
+sklearn
+matplotlib
