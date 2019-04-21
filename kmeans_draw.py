@@ -35,7 +35,7 @@ kmeans = KMeans(n_clusters=3).fit(X)
 labels = kmeans.predict(X)
 C = kmeans.cluster_centers_
 
-# Grafico para dibuujar los 3 centroides
+# Grafico para dibujar los 3 centroides
 colores=['red','green','blue']
 asignar=[]
 for row in labels:
