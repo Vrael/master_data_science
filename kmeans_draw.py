@@ -12,7 +12,7 @@ plt.style.use('ggplot')
 # Read and load the dataframe values
 dataframe = pd.read_csv(r"dataframe.txt", sep='\t')
 dataframe.head()
-print dataframe.describe()
+# print dataframe.describe()
 
 # Estructura de datos para alimentar el algoritmo.
 X = np.array(dataframe[["x","y","delay"]])
@@ -25,16 +25,17 @@ labels = kmeans.predict(X)
 C = kmeans.cluster_centers_
 
 # Grafico para dibuujar los centroides
-colores=['red','green','blue']
+colores=['red','black','blue']
 asignar=[]
 for row in labels:
     asignar.append(colores[row])
 
- # Obtener valores y dibujarlos entorno los centroides obtenidos
+# Obtener valores y dibujarlos entorno los centroides obtenidos
 fig = plt.figure()
 f1 = dataframe['x'].values
 f2 = dataframe['y'].values
+d = dataframe['delay'].values
  
-plt.scatter(f1, f2, c=asignar, s=70)
+plt.scatter(f1, f2, c=asignar, s=d, alpha=0.5)
 plt.scatter(C[:, 0], C[:, 1], marker='*', c=colores, s=1000)
 plt.show()

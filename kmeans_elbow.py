@@ -8,7 +8,7 @@ import pandas as pd
 # Cargar los valores del dataframe
 dataframe = pd.read_csv(r"dataframe.txt", sep='\t')
 dataframe.head()
-print dataframe.describe()
+print(dataframe.describe())
 
 # Estructura de datos para alimentar el algoritmo.
 X = np.array(dataframe[["x","y", "delay"]])
