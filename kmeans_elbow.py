@@ -1,9 +1,19 @@
+"""
+********* Kmeans_elbow ************
+Autores: 
+Marc Aguilar de Llorens
+Francisco Burgos Valdes
+
+Descripcion:
+Programa para dibujar la curva de valoracion del modelo, en funcion del numero de centroides y obtener el valor "de codo" a utlizar
+Sklearn para poder aplicar Kmenas al dataframe
+"""
+
 # Dependencies
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.datasets import make_blobs
 import pandas as pd
+from sklearn.cluster import KMeans
 
 # Cargar los valores del dataframe
 dataframe = pd.read_csv(r"dataframe.txt", sep='\t')

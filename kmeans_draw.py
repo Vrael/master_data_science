@@ -1,15 +1,26 @@
+"""
+********* Kmeans_draw ************
+Autores: 
+Marc Aguilar de Llorens
+Francisco Burgos Valdes
+
+Descripcion:
+Programa para dibujar los diferentes clusters de paradas en funcion de sus tiempos de espera
+Sklearn con Kmeans para agrupar y obtener los centroides
+Matplotlib para dibujar los graficos en 2D
+"""
+
 # Dependencies
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.datasets import make_blobs
 import pandas as pd
+from sklearn.cluster import KMeans
 
-# Prepare the graphics where we will display the results
+# Prepare los graficos donde mostrar los resultados
 plt.rcParams['figure.figsize'] = (16, 9)
 plt.style.use('ggplot')
 
-# Read and load the dataframe values
+# Leer los valores del fichero de dataframe
 dataframe = pd.read_csv(r"dataframe.txt", sep='\t')
 dataframe.head()
 # print dataframe.describe()
@@ -17,15 +28,17 @@ dataframe.head()
 # Estructura de datos para alimentar el algoritmo.
 X = np.array(dataframe[["x","y","delay"]])
 #y = np.array(dataframe['delay'])
-X.shape
+print("Shape")
+print(X.shape)
 
-# Ejecucion de Kmeans para obtener los centroides. K=3, obtenido mediante kmeans_elbow.py
+# Ejecucion de Kmeans para obtener los centroides. K=3, obtenido mediante kmeans_elbow.py 
 kmeans = KMeans(n_clusters=3).fit(X)
 labels = kmeans.predict(X)
 C = kmeans.cluster_centers_
 
 # Grafico para dibuujar los centroides
 colores=['red','black','blue']
+
 asignar=[]
 for row in labels:
     asignar.append(colores[row])
@@ -35,7 +48,12 @@ fig = plt.figure()
 f1 = dataframe['x'].values
 f2 = dataframe['y'].values
 d = dataframe['delay'].values
- 
+
+# Algoritmo de K-Means con K=3. Las 22 paradas en funcion de las coordenadas X,Y, agrupadas por delay
+print("Centroides")
+print(C[:,2])
 plt.scatter(f1, f2, c=asignar, s=d, alpha=0.5)
 plt.scatter(C[:, 0], C[:, 1], marker='*', c=colores, s=1000)
 plt.show()
+
+
